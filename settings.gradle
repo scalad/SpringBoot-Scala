@@ -16,4 +16,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'SpringBoot-Scala-Gradle'
+rootProject.name = 'SpringBoot-Scala'
