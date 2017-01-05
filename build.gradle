@@ -1,20 +1,28 @@
 buildscript {
-
+    ext {
+        springBootVersion = '1.4.3.RELEASE'
+    }
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.3.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
-
 apply plugin: 'java'
 apply plugin: 'scala'
 apply plugin: 'eclipse'
+apply plugin: 'application'
 apply plugin: 'org.springframework.boot'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+ext {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+jar {
+    baseName = 'spring-boot-scala'
+    version =  '0.1.0'
+}
 
 repositories {
     mavenCentral()
@@ -25,6 +33,11 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.thymeleaf:thymeleaf-spring4")
+    compile("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
+    compile "org.scala-lang:scala-library:2.11.7"
+    compile "org.scala-lang:scala-compiler:2.11.7"
+    compile "org.scala-lang:scala-reflect:2.11.7"
     testCompile("org.springframework.boot:spring-boot-starter-test")
     testCompile("junit:junit")
 }
