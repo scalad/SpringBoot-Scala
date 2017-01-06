@@ -4,6 +4,7 @@
 * Scala 2.1*
 * JDK 1.8*
 * Gradle 3.*
+* Mysql 5.1*
 
 ###build
 
