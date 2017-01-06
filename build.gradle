@@ -33,13 +33,14 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-actuator")
-    compile("org.thymeleaf:thymeleaf-spring4")
-    compile("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile "org.scala-lang:scala-library:2.11.7"
     compile "org.scala-lang:scala-compiler:2.11.7"
     compile "org.scala-lang:scala-reflect:2.11.7"
     testCompile("org.springframework.boot:spring-boot-starter-test")
-    testCompile("junit:junit")
+    //mysql driver
+    compile ("mysql:mysql-connector-java:5.1.38")
+    testCompile("junit:junit:4.12")
 }
 
 task wrapper(type: Wrapper) {
