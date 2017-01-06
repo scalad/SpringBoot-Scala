@@ -34,6 +34,6 @@
 
 * git clone https://github.com/silence940109/SpringBoot-Scala.git
 * gradle bootRun
-* http://localhsot:8080/index
+* http://localhsot:8080/list
 
 ![](https://github.com/silence940109/Java/blob/master/SpringBoot-Scala/image/springboot-scala.jpg)

@@ -18,41 +18,41 @@ import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.data.domain.Pageable
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Page
+import com.silence.service.UserService
 
 @ComponentScan
 @Controller
 @ResponseBody
-class UserController @Autowired()(private val userRepository : UserRepository){
+class UserController @Autowired()(private val userService : UserService){
   
 	@RequestMapping(value = Array("/list"), method = Array(RequestMethod.GET))
   def list() : List[User] = {
-      userRepository.findAll()
+      userService.findAll
   }
   
   @RequestMapping(value = Array("save"), method = Array(RequestMethod.POST))
   def save(@Valid user : User) : User = {
-      userRepository.save(user)
+      userService.add(user)
   }
   
 	@RequestMapping(value = Array("/find/{id}"), method = Array(RequestMethod.GET))
   def find(@PathVariable(value = "id") id: Long) : User = {
-      userRepository.findOne(id)
+      userService.find(id)
   }
   
   @RequestMapping(value = Array("delete/{id}"), method = Array(RequestMethod.POST))
   def delete(@PathVariable(value = "id") id: Long) : Unit = {
-      userRepository.delete(id)
+      userService.delete(id)
   }
   
   @RequestMapping(value = Array("update"), method = Array(RequestMethod.POST))
   def update(@Valid user : User, bindingResult : BindingResult) : User = {
-      userRepository.save(user)
+      userService.update(user)
   }
   
   @RequestMapping(value = Array("page"), method = Array(RequestMethod.GET))
   def page(@RequestParam("page") page : Int, @RequestParam("pageSize") pageSize : Int) : Page[User] = {
-      val rpage = if (page < 1) 1 else page; 
-		  userRepository.findAll(new PageRequest(rpage - 1, pageSize))
+      userService.page(page, pageSize)
   }
   
 }
