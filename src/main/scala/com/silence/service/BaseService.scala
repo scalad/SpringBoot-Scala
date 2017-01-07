@@ -24,7 +24,7 @@ abstract class BaseService[T: ClassTag] {
      * @param S <: T 
      * @return T
      */
-    def add[S <: T](s: S) : T = jpaRepository.save(s)
+    def save[S <: T](s: S) : T = jpaRepository.save(s)
     
     /**
      * @description 根据Id删除数据
@@ -33,6 +33,14 @@ abstract class BaseService[T: ClassTag] {
      */
     @Transactional
     def delete(id: Long): Unit = jpaRepository.delete(id)
+    
+    /**
+     * @description 实体批量删除
+     * @param List[T]
+     * @return Unit
+     */
+    @Transactional
+    def delete(lists: List[T]) : Unit = jpaRepository.delete(lists);
     
     /**
      * @description 根据Id更新数据
@@ -53,7 +61,13 @@ abstract class BaseService[T: ClassTag] {
      * @description 查询所有数据
      * @return List[T]
      */
-    def findAll[S <: T] :List[T] = jpaRepository.findAll
+    def findAll[S <: T]: List[T] = jpaRepository.findAll
+    
+    /**
+     * @description 集合Id查询数据
+     * @return List[T]
+     */
+    def findAll[S <: T](ids: List[Long]): List[T] = jpaRepository.findAll(ids)
     
     /**
      * @description 统计大小
@@ -76,8 +90,8 @@ abstract class BaseService[T: ClassTag] {
      */
     def page[S <: T](page: Int, pageSize: Int): Page[T] = {
       var rpage = if (page < 1) 1 else page;
-      var rpageSize = if (pageSize < 1) 5 else pageSize
+      var rpageSize = if (pageSize < 1) 5 else pageSize;
 		  jpaRepository.findAll(new PageRequest(rpage - 1, pageSize))
     }    
-    
+
 }

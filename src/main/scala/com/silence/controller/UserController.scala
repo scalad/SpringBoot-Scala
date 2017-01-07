@@ -32,7 +32,7 @@ class UserController @Autowired()(private val userService : UserService){
   
   @RequestMapping(value = Array("save"), method = Array(RequestMethod.POST))
   def save(@Valid user : User) : User = {
-      userService.add(user)
+      userService.save(user)
   }
   
 	@RequestMapping(value = Array("/find/{id}"), method = Array(RequestMethod.GET))
