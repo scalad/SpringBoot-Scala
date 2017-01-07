@@ -1,5 +1,7 @@
 ## SpringBoot-Scala
 
+[关于项目搭建以及项目结构](http://blog.csdn.net/qq_20545159/article/details/54173163)
+
 ###required
 * Scala 2.1*
 * JDK 1.8*
