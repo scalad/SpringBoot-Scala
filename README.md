@@ -2,13 +2,13 @@
 
 [关于项目搭建以及项目结构](http://blog.csdn.net/qq_20545159/article/details/54173163)
 
-###required
+### required
 * Scala 2.1*
 * JDK 1.8*
 * Gradle 3.*
 * Mysql 5.1*
 
-###configuration
+### configuration
 `application.properties`
     
 	#spring.datasource.url: jdbc:hsqldb:mem:scratchdb
@@ -33,12 +33,12 @@
 
 	init database
 	
-###build
+### build
 
 * git clone https://github.com/silence940109/SpringBoot-Scala.git
 * gradle bootRun
 
-###test
+### test
 
 * curl http://localhost:8080/list
 * curl http://localhost:8080/find/2
