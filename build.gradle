@@ -1,14 +1,3 @@
-buildscript {
-    ext {
-        springBootVersion = '1.4.3.RELEASE'
-    }
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-    }
-}
 apply plugin: 'java'
 apply plugin: 'scala'
 apply plugin: 'eclipse'
@@ -22,6 +11,18 @@ ext {
 jar {
     baseName = 'spring-boot-scala'
     version =  '0.1.0'
+}
+
+buildscript {
+    ext {
+        springBootVersion = '1.4.3.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
 repositories {

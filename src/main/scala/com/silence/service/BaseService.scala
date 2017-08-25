@@ -89,9 +89,9 @@ abstract class BaseService[T: ClassTag] {
      * @return Page[T]
      */
     def page[S <: T](page: Int, pageSize: Int): Page[T] = {
-      var rpage = if (page < 1) 1 else page;
-      var rpageSize = if (pageSize < 1) 5 else pageSize;
-		  jpaRepository.findAll(new PageRequest(rpage - 1, pageSize))
+        val rpage = if (page < 1) 1 else page;
+        val rpageSize = if (pageSize < 1) 5 else pageSize;
+  		  jpaRepository.findAll(new PageRequest(rpage - 1, pageSize))
     }    
 
 }

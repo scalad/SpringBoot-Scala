@@ -15,6 +15,6 @@ class Config
 
 object SpringBootScalaApplication extends App {
 
-  SpringApplication.run(classOf[Config])
+    SpringApplication.run(classOf[Config])
   
 }

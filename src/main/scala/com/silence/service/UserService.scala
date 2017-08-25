@@ -8,6 +8,6 @@ import org.springframework.stereotype.Service
 @Service
 class UserService extends BaseService[User] {
   
-  @Autowired val userRepository: UserRepository = null
+    @Autowired var userRepository: UserRepository = _
   
 }

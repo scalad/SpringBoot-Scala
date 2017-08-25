@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hello Spring Boot!</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <style>
+    body {
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <p>Hello Spring Boot in Scala!</p>
+  <p>Viewable as simple html and via appserver</p>
+  <ul data-th-each="street : ${streets}">
+    <li>Street:
+      <span data-th-text="${street.name}">Teststreet</span>
+      <span data-th-text="${street.number}" data-any="any-data-field">123 b</span>
+    </li>
+  </ul>
+  <a href="/street/Test+Street">Trim → Test Street</a> or go back to index <a href="/">Index</a>
+</body>
+</html>

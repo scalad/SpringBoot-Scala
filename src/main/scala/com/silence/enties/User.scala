@@ -17,24 +17,24 @@ import org.hibernate.validator.constraints.NotBlank
 @Entity
 class User {
 
-  @Id
-  @GeneratedValue
-  @BeanProperty
-  var id: Long = _
-  
-  @BeanProperty
-  @NotBlank
-  var name: String = _
-  
-  @BeanProperty
-  @NotNull
-  @DateTimeFormat(pattern="yyyy-MM-dd")
-  var birthday: Date = _
-  
-  @BeanProperty
-  @NotEmpty
-  var telephone: String = _
-  
-  override def toString = "id = " + id + ",name = " + name + ",birthday = " + birthday + ",telephone = " + telephone
-  
+    @Id
+    @GeneratedValue
+    @BeanProperty
+    var id: Long = _
+    
+    @BeanProperty
+    @NotBlank
+    var name: String = _
+    
+    @BeanProperty
+    @NotNull
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    var birthday: Date = _
+    
+    @BeanProperty
+    @NotEmpty
+    var telephone: String = _
+    
+    override def toString = "id = " + id + ",name = " + name + ",birthday = " + birthday + ",telephone = " + telephone
+    
 }
